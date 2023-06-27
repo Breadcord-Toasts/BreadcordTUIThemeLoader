@@ -1,0 +1,9 @@
+manifest_version = 1
+
+[module]
+name = "TUI Theme Loader"
+id = "tui_theme_loader"
+description = "Allows loading custom colour schemes into the breadcord TUI"
+version = "1.0.0"
+license = "GNU GPLv3"
+authors = ["Fripe"]

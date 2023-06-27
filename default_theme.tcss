@@ -1,0 +1,101 @@
+$background: #282c34
+$background-darker: #21252b
+$scrollbar: #54575c
+$highlight: #323844
+$selected: #404859
+
+$text-mono-1:   hsl(220, 14%, 71%);
+$text-mono-2:   hsl(220,  9%, 55%);
+$text-mono-3:   hsl(220, 10%, 40%);
+
+$text-cyan:     hsl(187, 47%, 55%);
+$text-blue:     hsl(207, 82%, 66%);
+$text-purple:   hsl(286, 60%, 67%);
+$text-green:    hsl( 95, 38%, 62%);
+
+$text-red-1:    hsl(355, 65%, 65%);
+$text-red-2:    hsl(  5, 48%, 51%);
+
+$text-orange-1: hsl( 29, 54%, 61%);
+$text-orange-2: hsl( 39, 67%, 69%);
+
+
+#header, HeaderClock {
+    background: $background-darker;
+}
+
+.datatable--header, .datatable--header-hover {
+    background: $highlight;
+}
+
+#output_log {
+    background: $background;
+}
+
+Input {
+    background: $highlight;
+}
+#input_prompt {
+  background: $background;
+}
+
+Footer {
+    background: $background-darker;
+    color: $text;
+    dock: bottom;
+    height: 1;
+}
+Footer > .footer--key {
+    text-style: bold;
+    background: $highlight;
+}
+Footer > .footer--highlight {
+    background: $highlight;
+}
+Footer > .footer--highlight-key {
+    background: $selected;
+    text-style: bold;
+}
+
+* {
+  scrollbar-color: $scrollbar;
+  scrollbar-background: $background;
+
+  scrollbar-color-hover: $scrollbar;
+  scrollbar-background-hover: $background;
+
+  scrollbar-color-active: $scrollbar;
+  scrollbar-background-active: $background;
+
+  scrollbar-corner-color: $background;
+}
+
+/* Selected/hovered over items are given a background */
+TableLog > .datatable--hover {
+    background: $selected;
+}
+TableLog > .datatable--cursor {
+    background: #4d78cc;
+    color: $text;
+}
+
+/* Custom log level text colour */
+TableLog > .tablelog--debug {
+    color: $text-mono-3;
+}
+TableLog > .tablelog--info {
+    color: $text-mono-1;
+}
+TableLog > .tablelog--warning {
+    color: $text-orange-1;
+}
+TableLog > .tablelog--error {
+    color: $text-red-1;
+}
+TableLog > .tablelog--critical {
+    background: $text-red-1;
+}
+TableLog > .tablelog--unknown {
+    background: red;
+}
+
