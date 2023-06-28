@@ -15,12 +15,16 @@ class ThemeLoader(breadcord.module.ModuleCog):
             shutil.copy(self.module.path / "default_theme.tcss", self.css_path)
 
     async def cog_load(self) -> None:
+        if not self.bot.tui:
+            return
         self.logger.debug(f"Loading theme from {self.css_path}")
         self.bot.tui.css_path = [self.css_path] + self.bot.tui.css_path
         # noinspection PyProtectedMember
         await self.bot.tui._on_css_change()
 
     async def cog_unload(self) -> None:
+        if not self.bot.tui:
+            return
         self.bot.tui.css_path.remove(self.css_path)
         # noinspection PyProtectedMember
         await self.bot.tui._on_css_change()
