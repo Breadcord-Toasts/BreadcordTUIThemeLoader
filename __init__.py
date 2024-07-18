@@ -30,5 +30,5 @@ class ThemeLoader(breadcord.module.ModuleCog):
         await self.bot.tui._on_css_change()
 
 
-async def setup(bot: breadcord.Bot):
-    await bot.add_cog(ThemeLoader("tui_theme_loader"))
+async def setup(bot: breadcord.Bot, module: breadcord.module.Module) -> None:
+    await bot.add_cog(ThemeLoader(module.id))
